@@ -16,20 +16,13 @@
         {% include 'main/navigation.html' %}
         {% include 'main/registrationButtons.html' %}
         <div class="center_table">
-            <form class="table_change_form" method="post">
+            <div class="registration_header">Вход</div>
+            <form class="table_change_form" method="post" action="{% url 'login' %}">
                 {% csrf_token %}
-                {% for d in form %}
-                    {% if forloop.counter == 1 %} <div class="name">{{names.0}}</div> {% endif %}
-                    {% if forloop.counter == 2 %} <div class="name">{{names.1}}</div> {% endif %}
-                    {% if forloop.counter == 3 %} <div class="name">{{names.2}}</div> {% endif %}
-                    {% if forloop.counter == 4 %} <div class="name">{{names.3}}</div> {% endif %}
-                    {% if forloop.counter == 5 %} <div class="name">{{names.4}}</div> {% endif %}
-                    {% if forloop.counter == 6 %} <div class="name">{{names.5}}</div> {% endif %}
-                    {% if forloop.counter == 7 %} <div class="name">{{names.6}}</div> {% endif %}
-                    {% if forloop.counter == 8 %} <div class="name">{{names.7}}</div> {% endif %}
-                    {% if forloop.counter == 9 %} <div class="name">{{names.8}}</div> {% endif %}
-                    {{d}}
-                {% endfor %}
+                <div class="name">Логин</div>
+                <input type="text" name="username" class="input_field">
+                <div class="name">Пароль</div>
+                <input type="password" name="password" class="input_field">
                 <div style="color: white;">{{error}}</div>
                 <button class="confirm_button button" type="submit">Подтвердить</button>
             </form>

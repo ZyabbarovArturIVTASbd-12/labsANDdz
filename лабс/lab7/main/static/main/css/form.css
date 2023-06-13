@@ -25,15 +25,6 @@ html, body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.input_field {
-    color: white;
-    background-color: #23365d;
-    border-radius: 5px;
-    border-style: none;
-    padding: 5px 5px 5px 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
 .confirm_button {
     margin-top: 15px;
     background-color: #0479ac;
@@ -45,4 +36,18 @@ html, body {
 
 .confirm_button:active {
     background-color: #046a97;
+}
+
+.registration_header {
+    color: white;
+    font-size: 20px;
+}
+
+.input_field {
+    color: white;
+    background-color: #23365d;
+    border-radius: 5px;
+    border-style: none;
+    padding: 5px 5px 5px 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }

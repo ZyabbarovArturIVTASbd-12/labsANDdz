@@ -12,6 +12,7 @@ html, body {
     border-collapse: separate;
     border-spacing: 10px;
     width: 95%;
+    overflow-y: auto
 }
 
 .data_table th, td {

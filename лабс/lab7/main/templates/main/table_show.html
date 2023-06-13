@@ -14,6 +14,7 @@
 </head>
     <body>
         {% include 'main/navigation.html' %}
+        {% include 'main/registrationButtons.html' %}
         <div class="center_table">
                 <div class="horizontal_center">
                     <div>{{title}}</div>
@@ -21,27 +22,37 @@
                 <table class="data_table">
                     <tr>
                         {% for name in names %}
+                        {% if not forloop.counter == 1 %}
                         <th>{{ name }}</th>
+                        {% endif %}
                         {% endfor %}
-
+                        {% if user.is_authenticated and role == "travel_point_owner" %}
                         <th>Опции</th>
+                        {% endif %}
                     </tr>
 
                     {% for t in table %}
                     <tr>
                         {% for k, v in t.items %}
+                        {% if not forloop.counter == 1 %}
                         <td> {{v}} </td>
+                        {% endif %}
                         {% endfor %}
+
+                        {% if user.is_authenticated and role == "travel_point_owner" %}
                         <td>
                             <a href="{% url 'table_change' tk=table_id el=forloop.counter command='edit' %}" class="edit_button button">Редактировать</a>
                             <a href="{% url 'table_change' tk=table_id el=forloop.counter command='delete' %}"  class="delete_button button">Удалить</a>
                         </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </table>
+            {%if user.is_authenticated and role == "travel_point_owner" %}
             <div class="horizontal_center">
                 <a href="{% url 'table_change' tk=table_id el=0 command='add' %}"  class="add_button button big_button">Добавить</a>
             </div>
+            {% endif %}
         </div>
     </body>
 </html>

@@ -39,7 +39,7 @@ class CarForm(forms.ModelForm):
         model = Car
         fields = ['model_id', 'buy_location', 'owner_FIO']
         widgets = {
-                "model_id": forms.NumberInput(attrs={'class': 'input_field'}),
+                "model_id": forms.Select(attrs={'class': 'input_field'}),
                 "buy_location": forms.TextInput(attrs={'class': 'input_field'}),
                 "owner_FIO": forms.TextInput(attrs={'class': 'input_field'})
         }
@@ -104,8 +104,8 @@ class CarPassForm(forms.ModelForm):
         widgets = {
             "date_time": forms.DateTimeInput(attrs={'class': 'input_field'}),
             "plate_number": forms.TextInput(attrs={'class': 'input_field'}),
-            "car_id": forms.NumberInput(attrs={'class': 'input_field'}),
-            "travel_point_id": forms.NumberInput(attrs={'class': 'input_field'}),
+            "car_id": forms.Select(attrs={'class': 'input_field'}),
+            "travel_point_id": forms.Select(attrs={'class': 'input_field'}),
         }
 
 
@@ -124,7 +124,7 @@ class DataOfPassingCarForm(forms.ModelForm):
         model = DataOfPassingCar
         fields = ['numberHistory', 'speed', 'driverFIO']
         widgets = {
-            "numberHistory": forms.NumberInput(attrs={'class': 'input_field'}),
+            "numberHistory": forms.Select(attrs={'class': 'input_field'}),
             "speed": forms.NumberInput(attrs={'class': 'input_field'}),
             "driverFIO": forms.TextInput(attrs={'class': 'input_field'})
         }
